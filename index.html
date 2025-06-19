@@ -1,1 +1,98 @@
-<div>Remi er kul</div>
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <title>Hamar vedsentral – Forside</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+<header class="navbar">
+    <nav class="nav-links">
+        <a class="nav-link selected" href="index.html">Bestill</a>
+        <a class="nav-link" href="om-oss.html">Om oss</a>
+        <a class="nav-link" href="produkter.html">Produkter</a>
+        <a class="nav-link" href="kontakt.html">Kontakt</a>
+    </nav>
+</header>
+
+<main>
+    <div class="title-background">
+        <div class="title-box">
+          <h1>Hamar vedsentral</h1>
+          <h3>BJØRKEVED RETT HJEM TIL DEG</h3>
+        </div>
+      </div>
+
+      <section class="content-box">
+
+        <section class="order-form-box">
+            <h1>BESTILL BJØRKVED</h1>
+
+            <form action="bestilling-registrert.html" method="get" class="order-form" autocomplete="on">
+             
+                    <div class="row">
+                        <h3>Vare</h3>
+                        <h3>Pris</h3>
+                        <h3>Antall</h3>
+                        <h3></h3>
+                        <h3></h3>
+                    </div>
+                    <div class="row">
+                        <label for="quantity-40l">Bjørkved 40L</label>
+                        <div>70kr</div>
+                        <button type="button" class="qty-btn" id="minus-40l">−</button>
+                        <input type="number" id="quantity-40l" name="quantity_40l" value="0" required />
+                        <button type="button" class="qty-btn" id="plus-40l">+</button>
+                      </div>
+                      
+                      <div class="form-field">
+                        <div class="row">
+                          <label for="quantity-1000l">1000 liter</label>
+                          <div>1250kr</div>
+                          <button type="button" class="qty-btn" id="minus-1000l">−</button>
+                          <input type="number" id="quantity-1000l" name="quantity_1000l" value="0" required />
+                          <button type="button" class="qty-btn" id="plus-1000l">+</button>
+                        </div>
+                      </div>
+                      <div class="form-field">
+                        <div class="row">
+                          <label for="delivery-yes">Levering</label>
+                          <div>400kr</div>
+                          <div></div>
+                            <label><input type="radio" name="delivery" id="delivery-yes" value="yes"/> Ja</label>
+                            <label><input type="radio" name="delivery" id="delivery-no" value="no" checked/> Nei, henter selv</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div></div>
+                        <div id="total-sum">DYNAMIC VALUE</div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+
+
+              <label for="name">Navn</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="phone">Telefonnummer</label>
+              <input type="tel" id="phone" name="phone" required placeholder="Eks.: 98765432" />
+
+              <label for="address">Leveringsadresse</label>
+              <textarea id="address" name="address" required placeholder="Gateadresse, postnummer og sted"></textarea>
+
+              <label for="date">Leveringsdato</label>
+              <input type="date" id="date" name="date" required />
+
+              <button type="submit">Bestill</button>
+            </div>
+            </form>
+          </section>
+    
+      </section>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>

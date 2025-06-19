@@ -1,0 +1,53 @@
+.order-form-box {
+    background: white;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .order-form label {
+    font-weight: 500;
+  }
+  
+  .order-form input,
+  .order-form textarea,
+  .order-form button {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .order-form textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  
+  .order-form button {
+    background: #181f2d;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .order-form button:hover {
+    background: #222;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+.row > *:nth-child(1) { flex: 0 0 35%; }  /* Label */
+.row > *:nth-child(2) { flex: 0 0 25%; }  /* Price */
+.row > *:nth-child(3) { flex: 0 0 10%; }  /* Minus */
+.row > *:nth-child(4) { flex: 0 0 20%; }  /* Input */
+.row > *:nth-child(5) { flex: 0 0 10%; }  /* Plus */

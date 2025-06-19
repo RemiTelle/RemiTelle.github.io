@@ -1,0 +1,62 @@
+
+  body, main {
+    margin: 0;
+  }
+  
+
+.navbar {
+    background: #181f2d;
+    padding: 2rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .nav-link.selected{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  
+  
+  .title-background {
+    background: 
+    linear-gradient(to bottom, rgba(0,0,0,0) 70%, white 100%),
+    url('bjork.jpg');  /* your image file */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    text-align: center;
+    min-height: 1000px;
+  }
+
+  .title-box {
+    background: rgba(0, 0, 0, 0.8); /* semi-transparent dark box */
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+  }
+
+  .content-box {
+    background: white;
+    padding: 2rem;
+    max-width: 70%;
+    margin: -600px auto 0 auto; /* negative margin pulls it up */
+    min-height: 1000px;
+  }
+  
