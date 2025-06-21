@@ -15,33 +15,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const qty40 = parseInt(quantity40l.value, 10) || 0;
     const qty1000 = parseInt(quantity1000l.value, 10) || 0;
     const deliveryCost = deliveryYes.checked ? 400 : 0;
-    console.log(deliveryYes.checked);
 
-    console.log(deliveryYes.checked);
     const total = qty40 * 70 + qty1000 * 1250 + deliveryCost;
     totalDisplay.textContent = `Sum: ${total} kr`;
   };
 
   minus40l.addEventListener("click", () => {
-    let current = parseInt(quantity40l.value, 10);
+    let current = quantity40l.value ? parseInt(quantity40l.value, 10) : 0;
+    console.log(current);
     quantity40l.value = current - 1;
     updateTotal();
   });
 
   plus40l.addEventListener("click", () => {
-    let current = parseInt(quantity40l.value, 10);
+    let current = quantity40l.value ? parseInt(quantity40l.value, 10) : 0;
     quantity40l.value = current + 1;
     updateTotal();
   });
 
   minus1000l.addEventListener("click", () => {
-    let current = parseInt(quantity1000l.value, 10);
+    let current = quantity1000l.value ? parseInt(quantity1000l.value, 10) : 0;
     quantity1000l.value = current - 1;
     updateTotal();
   });
 
   plus1000l.addEventListener("click", () => {
-    let current = parseInt(quantity1000l.value, 10);
+    let current = quantity1000l.value ? parseInt(quantity1000l.value, 10) : 0;
     quantity1000l.value = current + 1;
     updateTotal();
   });

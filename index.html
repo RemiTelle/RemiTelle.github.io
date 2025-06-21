@@ -2,7 +2,7 @@
 <html lang="no">
 <head>
   <meta charset="utf-8" />
-  <title>Hamar vedsentral – Forside</title>
+  <title>Hamar vedsentral</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="order.css" />
 </head>
@@ -19,8 +19,10 @@
 <main>
     <div class="title-background">
         <div class="title-box">
-          <h1>Hamar vedsentral</h1>
-          <h3>BJØRKEVED RETT HJEM TIL DEG</h3>
+          <h1 class='title1'>Hamar vedsentral</h1>
+        </div>
+        <div class="title-box">
+          <h3>NORSK BJØRKEVED - RETT HJEM TIL DEG</h3>
         </div>
       </div>
 
@@ -42,7 +44,7 @@
                         <label for="quantity-40l">Bjørkved 40L</label>
                         <div>70kr</div>
                         <button type="button" class="qty-btn" id="minus-40l">−</button>
-                        <input type="number" id="quantity-40l" name="quantity_40l" value="0" required />
+                        <input type="number" id="quantity-40l" name="quantity_40l"  placeholder="0"/>
                         <button type="button" class="qty-btn" id="plus-40l">+</button>
                       </div>
                       
@@ -51,7 +53,7 @@
                           <label for="quantity-1000l">1000 liter</label>
                           <div>1250kr</div>
                           <button type="button" class="qty-btn" id="minus-1000l">−</button>
-                          <input type="number" id="quantity-1000l" name="quantity_1000l" value="0" required />
+                          <input type="number" id="quantity-1000l" name="quantity_1000l" placeholder="0"/>
                           <button type="button" class="qty-btn" id="plus-1000l">+</button>
                         </div>
                       </div>
@@ -92,6 +94,14 @@
     
       </section>
 </main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <a href="https://www.facebook.com/hamarvedsentral" target="_blank">Facebook</a>
+    <a href="tel:12345678">Telefonnummer: 97791502</a>
+    <a href="mailto:kontakt@hamarvedsentral.no">jonathan@hamarvedsentral.no</a>
+  </div>
+</footer>
 
 <script src="main.js"></script>
 </body>

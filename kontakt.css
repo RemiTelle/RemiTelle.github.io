@@ -1,0 +1,25 @@
+main{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  .contact-container{
+    display:flex;
+    flex-direction:column;
+    gap:4rem;
+    text-align:center;
+    justify-content: ce;
+    font-size:1.6rem;
+    margin-top:5rem
+  }
+  
+  .contact-item i{
+    font-size:6rem;
+    margin-bottom:1rem;
+  }
+  
+  .contact-item a{
+    text-decoration:none;
+    color:inherit;
+  }
