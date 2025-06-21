@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const total = qty40 * qty40Price + qty1000 * qty1000Price + deliveryCost;
 
     qty40PriceDisplay.textContent = `${qty40Price} kr`;
-    deliveryCostDisplay.textContent = `Levering ${deliveryCost} kr`;
+    deliveryCostDisplay.textContent = `Levering ${
+      totalBags > 34 ? 250 : 400
+    } kr`;
     totalDisplay.textContent = `Sum: ${total} kr`;
   };
 
