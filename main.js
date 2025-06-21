@@ -10,13 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const deliveryNo = document.getElementById("delivery-no");
 
   const totalDisplay = document.getElementById("total-sum");
+  const qty40PriceDisplay = document.getElementById("qty40PriceDisplay");
+  const deliveryCostDisplay = document.getElementById("deliveryCostDisplay");
 
   const updateTotal = () => {
     const qty40 = parseInt(quantity40l.value, 10) || 0;
     const qty1000 = parseInt(quantity1000l.value, 10) || 0;
-    const deliveryCost = deliveryYes.checked ? 400 : 0;
+    const totalBags = qty40 + qty1000 * 19;
+    const deliveryCost = deliveryYes.checked ? (totalBags > 34 ? 250 : 400) : 0;
+    const qty40Price = totalBags > 24 ? 67 : 70;
+    const qty1000Price = 1250;
 
-    const total = qty40 * 70 + qty1000 * 1250 + deliveryCost;
+    const total = qty40 * qty40Price + qty1000 * qty1000Price + deliveryCost;
+
+    qty40PriceDisplay.textContent = `${qty40Price} kr`;
+    deliveryCostDisplay.textContent = `Levering ${deliveryCost} kr`;
     totalDisplay.textContent = `Sum: ${total} kr`;
   };
 

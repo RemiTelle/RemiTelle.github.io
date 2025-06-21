@@ -105,3 +105,13 @@
     margin: auto
 
   }
+
+  @media (max-width: 768px){
+    .title1{font-size:2rem}
+    .title-background{min-height:600px;padding-top:1rem}
+    .content-box,
+    .content-box2{max-width:100%;margin:-300px auto 0}
+    .row h3{font-size:1rem}
+    .navbar{padding:1rem}
+    .nav-links{gap:1rem;flex-wrap:wrap}
+  }
