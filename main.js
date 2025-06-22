@@ -30,17 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const serviceID = 'hamarVedsentral';
         const templateID = 'template_yilq9iz';
 
-        console.log(this)
-
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
-              console.log(this)
-              alert('Sent!');
-              this.removeChild(hiddenEmailInput);
-            }, (err) => {
-              alert(JSON.stringify(err));
-              this.removeChild(hiddenEmailInput);
-            });
+          emailjs.sendForm(serviceID, templateID, this)
+              .then(() => {
+                  window.location.href = 'bestilling-registrert.html';
+              }, (err) => {
+                  alert('Sending feilet');
+              })
+              .finally(() => {
+                  this.removeChild(hiddenEmailInput);
+              });
       });
 
 
