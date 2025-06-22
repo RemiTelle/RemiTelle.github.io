@@ -5,21 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hamar vedsentral – Om oss</title>
   <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 </head>
 <body>
 
-    <header class="navbar">
-        <nav class="nav-links">
-            <a class="nav-link" href="index.html">Bestill</a>
-            <a class="nav-link selected" href="om-oss.html">Om oss</a>
-            <a class="nav-link" href="produkter.html">Produkter</a>
-            <a class="nav-link" href="kontakt.html">Kontakt</a>
-        </nav>
-    </header>
+<header class="navbar">
+    <button class="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+        <a class="nav-link" href="index.html">Bestill</a>
+        <a class="nav-link selected" href="om-oss.html">Om oss</a>
+        <a class="nav-link" href="produkter.html">Produkter</a>
+        <a class="nav-link" href="kontakt.html">Kontakt</a>
+    </nav>
+</header>
 
 <main>
     <section class="content-box2">
-    <h1>Om oss</h1>
+    <h1 class="title2">Om oss</h1>
     <section>
         <p>
             Hamarvedsentral holder til på Vang og er en pålitelig leverandør av bjørkeved til oppfyring. 
@@ -37,7 +45,15 @@
     </section>
     </section>
 </main>
-
-<script src="app.js"></script>
+<footer class="footer">
+    <div class="footer-content">
+        <a href="https://www.facebook.com/hamarvedsentral" target="_blank">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="tel:12345678">Tlf: 97791502</a>
+        <a href="mailto:kontakt@hamarvedsentral.no">jonathan@hamarvedsentral.no</a>
+    </div>
+</footer>
+<script src="nav.js"></script>
 </body>
 </html>

@@ -1,41 +1,21 @@
 
-  body, main {
-    margin: 0;
-  }
-  
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
   .title1{
     font-size: 4rem; 
   }
 
-.navbar {
-    background: #181f2d;
-    padding: 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-  }
-  
-  .nav-link {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .nav-link:hover{
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-
-  .nav-link.selected{
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-  
+.title2{
+  font-size: 3rem;
+}
   
   .title-background {
     background: 
@@ -56,29 +36,28 @@
     padding-left: 2rem;
     padding-right: 2rem;
     margin-bottom: 2rem;
-
+    border-radius: 12px;
   }
 
   .content-box {
     background: white;
     padding: 2rem;
     max-width: 50%;
-    margin: -700px auto 0 auto; /* negative margin pulls it up */
+    margin: -600px auto 0 auto; /* negative margin pulls it up */
     min-height: 1000px;
   }
   
   .footer {
-    background-color:     #181f2d;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #181f2d;
     color: white;
     padding: 1rem;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
   }
   
   .footer-content a {
-    margin: 0 1rem;
+    margin: 0 0.3rem;
     color: white;
     text-decoration: none;
   }
@@ -92,7 +71,7 @@
     max-width:600px;
     margin:0 auto;
   }
-  
+
   .map-img{
     width:100%;
     height:auto;
@@ -100,9 +79,27 @@
     cursor:pointer;
   }
 
+.product-img{
+  width:60%;
+  height:auto;
+  display:block;
+}
+
   .content-box2 {
     max-width: 50%;
     margin: auto
+  }
+
+  .remove-bold{
+    font-weight: normal;
+  }
+
+  .produkterSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
 
   }
 
@@ -113,4 +110,6 @@
     .row h3{font-size:1rem}
     .navbar{padding:1rem}
     .nav-links{gap:1rem;flex-wrap:wrap}
+    .content-box2 {max-width: 90%
+    }
   }

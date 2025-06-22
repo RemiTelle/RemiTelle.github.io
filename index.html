@@ -6,9 +6,17 @@
   <title>Hamar vedsentral</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="order.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 </head>
 <body>
 <header class="navbar">
+    <button class="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+    </button>
     <nav class="nav-links">
         <a class="nav-link selected" href="index.html">Bestill</a>
         <a class="nav-link" href="om-oss.html">Om oss</a>
@@ -23,25 +31,17 @@
           <h1 class='title1'>Hamar vedsentral</h1>
         </div>
         <div class="title-box">
-          <h3>NORSK BJØRKEVED - RETT HJEM TIL DEG</h3>
+          <h3>NORSK BJØRKEVED</h3>
+            <h4 class="remove-bold">RETT HJEM TIL DEG</h4>
         </div>
       </div>
 
       <section class="content-box">
 
         <section class="order-form-box">
-            <h1>BESTILL BJØRKVED</h1>
+            <h1 class="order-title">BESTILL BJØRKVED</h1>
 
             <form action="bestilling-registrert.html" method="get" class="order-form" autocomplete="on">
-             
-                    <div class="row">
-                        <h3>Vare</h3>
-                        <h3>Pris</h3>
-                        <h3>Antall</h3>
-                        <h3></h3>
-                        <h3></h3>
-                    </div>
-                    
                     <section class="frame">
                     <div class="row">
                         <div  class="bold">Bjørkved 40L</div>
@@ -105,12 +105,15 @@
 
 <footer class="footer">
   <div class="footer-content">
-    <a href="https://www.facebook.com/hamarvedsentral" target="_blank">Facebook</a>
+      <a href="https://www.facebook.com/hamarvedsentral" target="_blank">
+          <i class="fab fa-facebook"></i>
+      </a>
     <a href="tel:12345678">Tlf: 97791502</a>
     <a href="mailto:kontakt@hamarvedsentral.no">jonathan@hamarvedsentral.no</a>
   </div>
 </footer>
 
 <script src="main.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>

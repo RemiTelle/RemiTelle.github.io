@@ -1,8 +1,7 @@
 .order-form-box {
     background: white;
-    padding: 2rem;
     max-width: 600px;
-    margin: 2rem auto;
+  margin: auto;
   }
   
   .order-form {
@@ -56,9 +55,8 @@
 .delivery-toggle{
   border:0;
   display:flex;
-  flex-wrap:wrap;
+  flex-direction: column;
   gap:.8rem;
-  align-items:center;
   margin:1.2rem 0;
 }
 
@@ -91,6 +89,10 @@
   height:0;
 }
 
+.toggle{
+  max-width: 8rem;
+}
+
 .bold{
   font-weight:bold;  
 }
@@ -100,6 +102,13 @@
   border:2px solid #181f2d;
   border-radius:.4rem;
 }
+
+.order-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media (max-width: 768px){
   .order-form-box{ padding: 0rem;}
