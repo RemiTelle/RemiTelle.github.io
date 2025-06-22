@@ -41,7 +41,7 @@
         <section class="order-form-box">
             <h1 class="order-title">BESTILL BJØRKVED</h1>
 
-            <form action="bestilling-registrert.html" method="get" class="order-form" autocomplete="on">
+            <form id="contact-form" class="order-form" autocomplete="on">
                     <section class="frame">
                     <div class="row">
                         <div  class="bold">Bjørkved 40L</div>
@@ -52,7 +52,7 @@
                       </div>
                         <div>Bestilling over 25 sekker kun 67kr!</div>
                       </section>
-                      
+
                       <section class="frame">
                         <div class="row">
                           <div  class="bold">"1000 liter storsekk"</div>
@@ -61,18 +61,18 @@
                           <input type="number" id="quantity-1000l" name="quantity_1000l" placeholder="0"/>
                           <button type="button" class="qty-btn" id="plus-1000l">+</button>
                         </div>
-                 
+
                       <div>1.000 liter løsved komprimert i 19 sekker à 40 liter (uten luft) </div>
                     </section>
                     <section class="frame">
                           <fieldset class="delivery-toggle">
                             <legend>Levering Hamar område</legend>
                             <div>(Pris på øvrig leveranseområder avtales)</div>
-                      
-                          
+
+
                             <input type="radio" name="delivery" id="delivery-yes" value="yes" required checked>
                             <label for="delivery-yes" class="toggle" id="deliveryCostDisplay">Levering 400 kr</label>
-                          
+
                             <input type="radio" name="delivery" id="delivery-no" value="no">
                             <label for="delivery-no" class="toggle">Henter selv</label>
                           </fieldset>
@@ -95,7 +95,7 @@
               <button type="submit"> Bestill</button>
             </form>
           </section>
-    
+
       </section>
 </main>
 
@@ -108,7 +108,7 @@
     <a href="mailto:kontakt@hamarvedsentral.no">jonathan@hamarvedsentral.no</a>
   </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="main.js"></script>
 <script src="nav.js"></script>
 </body>

@@ -13,6 +13,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const qty40PriceDisplay = document.getElementById("qty40PriceDisplay");
   const deliveryCostDisplay = document.getElementById("deliveryCostDisplay");
 
+  emailjs.init('GnJ4BJ1PgpmKm49ID');
+
+  document.getElementById('contact-form')
+      .addEventListener('submit', function(event) {
+        event.preventDefault();
+
+
+        const hiddenEmailInput = document.createElement('input');
+        hiddenEmailInput.type = 'hidden';
+        hiddenEmailInput.name = 'email';
+        hiddenEmailInput.value = 'remiskrem123@gmail.com';
+
+        this.appendChild(hiddenEmailInput);
+
+        const serviceID = 'hamarVedsentral';
+        const templateID = 'template_yilq9iz';
+
+        console.log(this)
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+              console.log(this)
+              alert('Sent!');
+              this.removeChild(hiddenEmailInput);
+            }, (err) => {
+              alert(JSON.stringify(err));
+              this.removeChild(hiddenEmailInput);
+            });
+      });
+
+
   const updateTotal = () => {
     const qty40 = parseInt(quantity40l.value, 10) || 0;
     const qty1000 = parseInt(quantity1000l.value, 10) || 0;
