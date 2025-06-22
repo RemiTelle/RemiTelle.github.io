@@ -94,14 +94,38 @@ main {
     font-weight: normal;
   }
 
+  .contact{
+    margin-top: 2rem;
+  }
+
   .produkterSection{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 5rem;
-
   }
+
+.contact-item i{
+  display:flex;
+  flex-direction:column;
+  font-size:6rem;
+  margin-bottom:1rem;
+}
+
+.contact-item a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.contact-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-decoration:none;
+  color:inherit;
+}
+
 
   @media (max-width: 768px){
     .title1{font-size:2rem}
