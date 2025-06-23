@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const hiddenEmailInput = document.createElement('input');
         hiddenEmailInput.type = 'hidden';
         hiddenEmailInput.name = 'email';
-        hiddenEmailInput.value = 'remiskrem123@gmail.com';
+        hiddenEmailInput.value = 'jonathan@hamarvedsentral.no';
 
         this.appendChild(hiddenEmailInput);
 
