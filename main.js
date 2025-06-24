@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           emailjs.sendForm(serviceID, templateID, this)
               .then(() => {
-                  window.location.href = 'bestilling-registrert.html';
+                  window.location.href = './bestilling-registrert/';
               }, (err) => {
                   alert('Sending feilet');
               })
