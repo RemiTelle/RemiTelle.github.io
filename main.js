@@ -13,48 +13,59 @@ document.addEventListener("DOMContentLoaded", () => {
   const qty40PriceDisplay = document.getElementById("qty40PriceDisplay");
   const deliveryCostDisplay = document.getElementById("deliveryCostDisplay");
 
-  emailjs.init('GnJ4BJ1PgpmKm49ID');
+  emailjs.init("GnJ4BJ1PgpmKm49ID");
 
-  document.getElementById('contact-form')
-      .addEventListener('submit', function(event) {
-        event.preventDefault();
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
 
+      const hiddenEmailInput = document.createElement("input");
+      hiddenEmailInput.type = "hidden";
+      hiddenEmailInput.name = "email";
+      hiddenEmailInput.value = "jonathan@hamarvedsentral.no";
 
-        const hiddenEmailInput = document.createElement('input');
-        hiddenEmailInput.type = 'hidden';
-        hiddenEmailInput.name = 'email';
-        hiddenEmailInput.value = 'jonathan@hamarvedsentral.no';
+      this.appendChild(hiddenEmailInput);
 
-        this.appendChild(hiddenEmailInput);
+      const serviceID = "hamarVedsentral";
+      const templateID = "template_yilq9iz";
 
-        const serviceID = 'hamarVedsentral';
-        const templateID = 'template_yilq9iz';
-
-          emailjs.sendForm(serviceID, templateID, this)
-              .then(() => {
-                  window.location.href = './bestilling-registrert/';
-              }, (err) => {
-                  alert('Sending feilet');
-              })
-              .finally(() => {
-                  this.removeChild(hiddenEmailInput);
-              });
-      });
-
+      emailjs
+        .sendForm(serviceID, templateID, this)
+        .then(
+          () => {
+            window.location.href = "./bestilling-registrert/";
+          },
+          (err) => {
+            alert("Sending feilet");
+          }
+        )
+        .finally(() => {
+          this.removeChild(hiddenEmailInput);
+        });
+    });
 
   const updateTotal = () => {
     const qty40 = parseInt(quantity40l.value, 10) || 0;
     const qty1000 = parseInt(quantity1000l.value, 10) || 0;
     const totalBags = qty40 + qty1000 * 19;
-    const deliveryCost = deliveryYes.checked ? (totalBags > 34 ? 250 : 400) : 0;
-    const qty40Price = totalBags > 24 ? 67 : 70;
+
+    const costOfDeliveryCalculated =
+      Math.max(1, Math.ceil(totalBags / 76)) * 250;
+
+    const deliveryCost = deliveryYes.checked
+      ? totalBags > 25
+        ? costOfDeliveryCalculated
+        : 400
+      : 0;
+    const qty40Price = totalBags > 25 ? 67 : 70;
     const qty1000Price = 1250;
 
     const total = qty40 * qty40Price + qty1000 * qty1000Price + deliveryCost;
 
     qty40PriceDisplay.textContent = `${qty40Price} kr`;
     deliveryCostDisplay.textContent = `Levering ${
-      totalBags > 34 ? 250 : 400
+      totalBags > 25 ? costOfDeliveryCalculated : 400
     } kr`;
     totalDisplay.textContent = `Sum: ${total} kr`;
   };
