@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalDisplay = document.getElementById("total-sum");
   const qty40PriceDisplay = document.getElementById("qty40PriceDisplay");
   const deliveryCostDisplay = document.getElementById("deliveryCostDisplay");
+  const deliveryText = document.getElementById("delivery-text");
+
+  const levertingskostnad = document.getElementById("levertingskostnad");
+  const vedkostnad = document.getElementById("vedkostnad");
 
   let totalPrice = 0;
 
@@ -58,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const qty1000 = parseInt(quantity1000l.value, 10) || 0;
     const totalBags = qty40 + qty1000 * 19;
 
-    const costOfDeliveryCalculated =
-      Math.max(1, Math.ceil(totalBags / 76)) * 250;
+    const trips = Math.max(1, Math.ceil(totalBags / 76));
+    const costOfDeliveryCalculated = trips * 250;
 
     const deliveryCost = deliveryYes.checked
       ? totalBags > 25
@@ -69,13 +73,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const qty40Price = totalBags > 25 ? 67 : 70;
     const qty1000Price = 1250;
 
-    totalPrice = qty40 * qty40Price + qty1000 * qty1000Price + deliveryCost;
+    const woodCost = qty40 * qty40Price + qty1000 * qty1000Price;
+    totalPrice = woodCost + deliveryCost;
 
     qty40PriceDisplay.textContent = `${qty40Price} kr`;
     deliveryCostDisplay.textContent = `Levering ${
       totalBags > 25 ? costOfDeliveryCalculated : 400
     } kr`;
     totalDisplay.textContent = `Sum: ${totalPrice} kr`;
+    levertingskostnad.textContent = `Levertingskostnad: ${deliveryCost} kr`;
+    vedkostnad.textContent = `Vedkostnad: ${woodCost} kr`;
+
+    if (totalBags > 76) {
+      deliveryText.innerHTML = `Ved store bestillinger tar vi 250 kr per lass (4 storsekker / 76 sekker)`;
+    } else {
+      deliveryText.innerHTML = `Levering over 25 sekker kun 250 kr!`;
+    }
   };
 
   minus40l.addEventListener("click", () => {
