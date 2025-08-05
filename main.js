@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const qty40PriceDisplay = document.getElementById("qty40PriceDisplay");
   const deliveryCostDisplay = document.getElementById("deliveryCostDisplay");
 
+  let totalPrice = 0;
+
   emailjs.init("GnJ4BJ1PgpmKm49ID");
 
   document
@@ -24,8 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
       hiddenEmailInput.type = "hidden";
       hiddenEmailInput.name = "email";
       hiddenEmailInput.value = "jonathan@hamarvedsentral.no";
-
       this.appendChild(hiddenEmailInput);
+
+      const hiddenToalPriceInput = document.createElement("input");
+      hiddenToalPriceInput.type = "hidden";
+      hiddenToalPriceInput.name = "totalPrice";
+      hiddenToalPriceInput.value = String(totalPrice);
+      this.appendChild(hiddenToalPriceInput);
 
       const serviceID = "hamarVedsentral";
       const templateID = "template_yilq9iz";
@@ -42,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         )
         .finally(() => {
           this.removeChild(hiddenEmailInput);
+          this.removeChild(hiddenToalPriceInput);
         });
     });
 
@@ -61,13 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const qty40Price = totalBags > 25 ? 67 : 70;
     const qty1000Price = 1250;
 
-    const total = qty40 * qty40Price + qty1000 * qty1000Price + deliveryCost;
+    totalPrice = qty40 * qty40Price + qty1000 * qty1000Price + deliveryCost;
 
     qty40PriceDisplay.textContent = `${qty40Price} kr`;
     deliveryCostDisplay.textContent = `Levering ${
       totalBags > 25 ? costOfDeliveryCalculated : 400
     } kr`;
-    totalDisplay.textContent = `Sum: ${total} kr`;
+    totalDisplay.textContent = `Sum: ${totalPrice} kr`;
   };
 
   minus40l.addEventListener("click", () => {
