@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const deliveryCostDisplay = document.getElementById("deliveryCostDisplay");
   const deliveryText = document.getElementById("delivery-text");
 
-  const levertingskostnad = document.getElementById("levertingskostnad");
+  const leveringskostnad = document.getElementById("leveringskostnad");
   const vedkostnad = document.getElementById("vedkostnad");
 
   let totalPrice = 0;
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       totalBags > 25 ? costOfDeliveryCalculated : 400
     } kr`;
     totalDisplay.textContent = `Sum: ${totalPrice} kr`;
-    levertingskostnad.textContent = `Levertingskostnad: ${deliveryCost} kr`;
+    leveringskostnad.textContent = `Leveringskostnad: ${deliveryCost} kr`;
     vedkostnad.textContent = `Vedkostnad: ${woodCost} kr`;
 
     if (totalBags > 76) {
