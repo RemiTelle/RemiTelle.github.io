@@ -60,18 +60,17 @@
                     <section class="frame">
                     <div class="row">
                         <div  class="bold">Bjørkved 40L</div>
-                        <div id="qty40PriceDisplay">70kr</div>
+                        <div id="qty40PriceDisplay" data-price-value="smallBag.standardPrice" data-price-format="currency"></div>
                         <button type="button" class="qty-btn" id="minus-40l">−</button>
                         <input type="number" id="quantity-40l" name="quantity_40l"  placeholder="0"/>
                         <button type="button" class="qty-btn" id="plus-40l">+</button>
                       </div>
-                        <div>Bestilling over 25 sekker kun 67kr!</div>
                       </section>
 
                       <section class="frame">
                         <div class="row">
                           <div  class="bold">"1000 liter storsekk"</div>
-                          <div>1250 kr</div>
+                          <div id="qty1000PriceDisplay" data-price-value="largeBag.price" data-price-format="currency"></div>
                           <button type="button" class="qty-btn" id="minus-1000l">−</button>
                           <input type="number" id="quantity-1000l" name="quantity_1000l" placeholder="0"/>
                           <button type="button" class="qty-btn" id="plus-1000l">+</button>
@@ -86,12 +85,11 @@
 
 
                             <input type="radio" name="delivery" id="delivery-yes" value="yes" required checked>
-                            <label for="delivery-yes" class="toggle" id="deliveryCostDisplay">Levering 400 kr</label>
+                            <label for="delivery-yes" class="toggle" id="deliveryCostDisplay"></label>
 
                             <input type="radio" name="delivery" id="delivery-no" value="no">
                             <label for="delivery-no" class="toggle">Henter selv</label>
                           </fieldset>
-                          <div id="delivery-text">Levering over 25 sekker kun 250 kr!</div>
                         </section>
 
               <label for="name">Navn</label>
@@ -103,9 +101,9 @@
               <label for="address">Leveringsadresse</label>
               <textarea id="address" name="address" required placeholder="Gateadresse, postnummer og sted"></textarea>
 
-              <div id="leveringskostnad">Leveringskostnad: 400 kr</div>
-              <div id="vedkostnad">Vedkostnad: 0 kr</div>
-              <div id="total-sum">400 kr</div>
+              <div id="leveringskostnad"></div>
+              <div id="vedkostnad"></div>
+              <div id="total-sum"></div>
               <button type="submit"> Bestill</button>
             </form>
           </section>
@@ -123,6 +121,7 @@
   </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="prices.js"></script>
 <script src="main.js"></script>
 <script src="nav.js"></script>
 </body>
