@@ -68,7 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const qty40 = parseInt(quantity40l.value, 10) || 0;
     const qty1000 = parseInt(quantity1000l.value, 10) || 0;
 
-    const deliveryCost = deliveryYes.checked ? priceConfig.delivery.standardPrice : 0;
+    const calculatedDeliveryCost = priceHelpers.calculateDeliveryCost({
+      smallBagQuantity: qty40,
+      largeBagQuantity: qty1000,
+    });
+    const deliveryCost = deliveryYes.checked ? calculatedDeliveryCost : 0;
     const qty40Price = priceConfig.smallBag.standardPrice;
     const qty1000Price = priceConfig.largeBag.price;
 
@@ -77,9 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     qty40PriceDisplay.textContent = priceHelpers.formatCurrency(qty40Price);
     qty1000PriceDisplay.textContent = priceHelpers.formatCurrency(qty1000Price);
-    deliveryCostDisplay.textContent = `Levering ${priceHelpers.formatCurrency(
-      priceConfig.delivery.standardPrice
-    )}`;
+    deliveryCostDisplay.textContent = `Levering ${priceHelpers.formatCurrency(calculatedDeliveryCost)}`;
     totalDisplay.textContent = `Sum: ${priceHelpers.formatCurrency(totalPrice)}`;
     leveringskostnad.textContent = `Leveringskostnad: ${priceHelpers.formatCurrency(deliveryCost)}`;
     vedkostnad.textContent = `Vedkostnad: ${priceHelpers.formatCurrency(woodCost)}`;
